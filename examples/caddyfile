@@ -1,0 +1,30 @@
+{
+  http_port 8080
+  debug
+}
+
+
+http://localhost {
+
+
+  @w {
+    pathparams /api/:version/:resource
+  }
+
+  route @w {
+    respond * "Getting version {http.matchers.pathparams.version} of resource {http.matchers.pathparams.resource}" 200
+  }
+
+  @ww {
+    pathparams /api2/:stuff
+  }
+
+  route @ww {
+    respond * "api2 {http.matchers.pathparams.stuff}" 200
+  }
+
+  route {
+    respond * "" 404
+  }
+
+}
