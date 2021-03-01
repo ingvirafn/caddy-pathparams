@@ -1,4 +1,4 @@
-module github.com/ingvirafn/pathparams
+module github.com/ingvirafn/caddy-pathparams
 
 go 1.14
 
